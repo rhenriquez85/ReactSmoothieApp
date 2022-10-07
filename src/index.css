@@ -11,7 +11,7 @@ body {
   background-color: black;
 }
 
-@media (pointer:coarse), (pointer:none), (max-width:768px) {
+@media (pointer:coarse), (pointer:none), (max-width:800px) {
   body {
     background-image: url("./images/space-and-clouds-summer-mobile.jpeg");
     background-size: auto;
