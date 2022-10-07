@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { MainWindow } from './components/common/mainWindow/MainWindow';
+import { MainWindow } from './components/mainWindow/MainWindow';
 
 function App() {
   return (
