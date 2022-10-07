@@ -5,6 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./images/space-and-clouds-summer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+@media (pointer:coarse), (pointer:none), (max-width:768px) {
+  body {
+    background-image: url("./images/space-and-clouds-summer-mobile.jpeg");
+    background-size: auto;
+    background-size: 100vw 100vh;
+
+  }
 }
 
 code {
