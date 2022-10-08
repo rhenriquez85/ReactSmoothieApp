@@ -36,13 +36,3 @@ const LeftPanel = () => {
 };
 
 export { LeftPanel };
-
-
-
-
-// Title
-// scroll list
-    // item picture
-    // item name
-    // item price
-    // item add/delete

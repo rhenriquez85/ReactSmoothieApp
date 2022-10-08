@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { AddDeleteButton } from '../../../common/AddDeleteButton';
 
 const Container = styled.div`
     display: grid;
@@ -22,17 +23,18 @@ const Container = styled.div`
         padding: 0px;
     }
 
-    .title {
-
+    .priceline {
+        display: flex;
+        justify-content: space-between;
     }
 
-    .price {
-
+    .add-delete-buttons button:first-child {
+        margin-right: 5px;
     }
 
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
         width: 12vw;
-        padding: 0 0 2vw;
+        padding: 2vw 0;
         margin: 0;
 
         img {
@@ -47,6 +49,18 @@ const Container = styled.div`
             padding: 0;
             margin: 0;
         }
+
+        .priceline {
+            display: inline-block;
+        }
+
+        .add-delete-buttons button:first-child {
+            margin-right: 0px;
+        }
+
+        .add-delete-buttons button {
+            width: 100%;
+        }
     }
 `;
 
@@ -56,8 +70,14 @@ const ScrollItem = (props) => {
     return (
         <Container>
             <img src={img}></img>
-            <p className='title'>{title}</p>
-            <p className='price'>${price}</p>
+            <p>{title}</p>
+            <div className='priceline'>
+                <p>${price}</p>
+                <div className='add-delete-buttons'>
+                    <AddDeleteButton sign="+" />
+                    <AddDeleteButton sign="-" />
+                </div>
+            </div>
         </Container>
     )
 };

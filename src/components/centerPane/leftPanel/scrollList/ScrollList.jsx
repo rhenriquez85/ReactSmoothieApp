@@ -14,7 +14,7 @@ const StyledList = styled.ul`
 
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
         width: 12vw;
-        padding: 2vw 2vw 0;
+        padding: 0 2vw;
         margin-bottom: 2vh;
     }
 `;
@@ -30,7 +30,6 @@ const ScrollList = () => {
     const listItems = [];
     listData.forEach((data) => {
         listItems.push(<li key={data.title}>{ScrollItem(data)}</li>);
-        // listItems.push(ScrollItem(data));
     });
 
     return (
