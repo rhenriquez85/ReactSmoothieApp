@@ -6,16 +6,24 @@ const Container = styled.div`
     background-color: grey;
     border-right: black solid 2px;
     overflow-y: auto;
+    padding-bottom: 20px;
 
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
-        /* display: absolute;
-        width: 100%; */
+        padding: 0;
+        margin: 0;
     }
 `;
 
 const Title = styled.div`
     text-align: center;
     margin: 10px;
+    font-weight: bold;
+
+    @media (pointer:coarse), (pointer:none), (max-width:800px) {
+        font-size: 3vw;
+        padding: 0;
+        margin: 1vh 0;
+    }
 `;
 
 const LeftPanel = () => {

@@ -29,6 +29,25 @@ const Container = styled.div`
     .price {
 
     }
+
+    @media (pointer:coarse), (pointer:none), (max-width: 800px) {
+        width: 12vw;
+        padding: 0 0 2vw;
+        margin: 0;
+
+        img {
+            width: 12vw;
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-size: 3vw;
+            width: 12vw;
+            padding: 0;
+            margin: 0;
+        }
+    }
 `;
 
 const ScrollItem = (props) => {
