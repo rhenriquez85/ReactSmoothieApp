@@ -4,15 +4,19 @@ import { AddDeleteButton } from '../../../common/AddDeleteButton';
 const Container = styled.div`
     display: grid;
     justify-content: center;
-    padding: 10px 0px;
+    /* padding: 10px 0px; */
+    padding: 6px 4px 0px;
+    margin-bottom: 10px;
 
     img {
-        width: 120px;
+        /* width: 120px; */
+        width: 130px;
         height: 100px;
         object-fit: cover;
         border-radius: 5px;
         border: lightblue solid 1px;
-        margin-bottom: 2px;
+        /* margin: auto; */
+        margin: 0 auto;
     }
 
     p {
@@ -21,11 +25,14 @@ const Container = styled.div`
         font-weight: 200;
         margin: 0px;
         padding: 0px;
+        /* margin: 0px 5px; */
+        /* padding: 0px 10px; */
     }
 
     .priceline {
         display: flex;
         justify-content: space-between;
+        margin-top: 4px;
     }
 
     .add-delete-buttons button:first-child {
@@ -52,6 +59,7 @@ const Container = styled.div`
 
         .priceline {
             display: inline-block;
+            margin-top: 0px;
         }
 
         .add-delete-buttons button:first-child {

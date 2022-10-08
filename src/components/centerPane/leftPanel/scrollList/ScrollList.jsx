@@ -3,13 +3,15 @@ import { ScrollItem } from '../scrollItem/ScrollItem';
 import bites from '../../../../images/bites/quesadilla.jpg';
 import smoothie from '../../../../images/smoothies/rainbow.jpg'
 
-
 const StyledList = styled.ul`
     list-style-type: none;
     background-color: darkred;
     width: 75%;
-    margin: auto;
-    padding: 10px 10px;
+    /* margin: auto; */
+    margin: 0px auto;
+    /* padding: 10px 10px; */
+    padding: 10px 10px 6px;
+    /* padding: 10px 10px 0px; */
     border-radius: 10px;
 
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
