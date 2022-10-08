@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const RowContainer = styled.div`
     display: grid;
     grid-template-columns: 25% 55% 20%;
-    /* grid-template-columns: 30% 50% 20%; */
     background-color: darkgrey;
     border-color: black;
     border-width: 2px;

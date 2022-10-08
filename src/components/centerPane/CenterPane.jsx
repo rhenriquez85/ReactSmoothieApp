@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { RowContainer } from "../common/RowContainer";
 import { LeftPanel } from "./leftPanel/LeftPanel";
 import { MessageArea } from "./messageArea/MessageArea";
+import { RightPanel } from "./rightPanel/RightPanel";
 
 const StyledRowContainer = styled(RowContainer)`
     border-image: linear-gradient(to bottom, black, grey) 1;
@@ -10,13 +11,11 @@ const StyledRowContainer = styled(RowContainer)`
 const CenterPane = () => {
 
     return (
-        // <RowContainer>
         <StyledRowContainer>
             <LeftPanel />
             <MessageArea />
-            <div>Right panel</div>
+            <RightPanel />
         </StyledRowContainer>    
-        // </RowContainer>
     )
 };
 

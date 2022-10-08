@@ -7,8 +7,8 @@ const Container = styled.div`
     display: grid;
     grid-template-rows: 70% 10% 20%;
     justify-content: center;
-    /* padding: 20px 25px; */
     margin: 20px 25px;
+    font-weight: 500;
 
     img {
         width: 350px;
@@ -31,7 +31,6 @@ const Container = styled.div`
         img {
             width: 45vw;
             height: 55vw;
-            /* margin: auto; */
             margin: 0 auto;
         }
     }
