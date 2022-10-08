@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Header } from '../header/Header';
+import { CenterPane } from '../centerPane/CenterPane';
 
 const Container = styled.div`
     position: fixed;
@@ -41,7 +42,8 @@ const MainWindow = () => {
         <Container> 
             <Overlay>
                 <Header />
-                <div>Center Pane</div>
+                {/* <div>Center Pane</div> */}
+                <CenterPane />
                 <div>Footer</div>
             </Overlay>
         </Container>);

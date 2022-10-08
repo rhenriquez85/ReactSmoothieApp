@@ -12,7 +12,6 @@ const Menu = styled.div`
 
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
         justify-content: space-between;
-        /* margin: auto; */
     }
 `;
 

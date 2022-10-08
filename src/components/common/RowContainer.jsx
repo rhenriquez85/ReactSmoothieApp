@@ -7,7 +7,7 @@ export const RowContainer = styled.div`
     background-color: darkgrey;
     border-color: black;
     border-width: 2px;
-    border-style: solid;
+    border-style: solid solid none;
 
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
         grid-template-columns: 22.5% 55% 22.5%;

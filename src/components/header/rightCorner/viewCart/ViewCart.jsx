@@ -11,14 +11,11 @@ const Container = styled.div`
 `;
 
 const Title = styled.p`
-    transition: 1s ease;
-    :hover {
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
-        transition: 1s ease;
-    }
     font-weight: 600;
+    margin: auto;
+    :hover {
+        font-weight: 700;
+    }
 
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
         display: none;
@@ -26,7 +23,8 @@ const Title = styled.p`
 `;
 
 const Cart = styled.img`
-    margin-left: 10px;
+    margin: auto;
+    margin-right: 25px;
     width: 30px;
     height: 30px;
 

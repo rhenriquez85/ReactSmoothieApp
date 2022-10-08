@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import logo from '../../../images/logo.jpeg';
+// import logo from '../../../images/new.svg';
 
 const Container = styled.div`
     display: flex;
@@ -10,6 +11,8 @@ const StyledLogo = styled.img`
     position: relative;
     width: 40px;
     height: 40px;
+    /* width: 35px;
+    height: 35px; */
     outline: #403f3f solid 1px;
     border-radius: 50%;
     /* border: gray solid 5px; */
@@ -17,8 +20,9 @@ const StyledLogo = styled.img`
     /* border: #403f3f solid 5px; */
     /* border: darkblue solid 5px; */
     margin: auto 8px;
+    /* background-image: linear-gradient(to bottom right, white, white, white, lightblue, lightblue); */
 
-    transition: .8s ease; 
+    transition: .6s ease; 
 
     :hover {
         cursor: pointer;
@@ -29,7 +33,7 @@ const StyledLogo = styled.img`
         -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
         transform: scale(1.05);
-        transition: .8s ease;
+        transition: .6s ease;
     }
 
     @media (pointer:coarse), (pointer:none), (max-width:800px) {

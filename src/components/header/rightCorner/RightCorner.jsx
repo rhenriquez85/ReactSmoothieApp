@@ -4,7 +4,6 @@ import { ViewCart } from './viewCart/ViewCart';
 
 const Container = styled.div`
     display: grid;
-    /* justify-content: center; */
     align-items: end;
     
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
@@ -17,7 +16,6 @@ const RightCorner = () => {
     return (
         <Container>
             <ViewCart />
-            {/* <TotalCart>Total: <span>$250.00</span></TotalCart> */}
             <TotalCart amount={250.00} />
         </Container>
     );
