@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
     display: inline-block;
-    width: 35px;
-    height: 20px;
+    width: fit-content;
+    height: fit-content;
 `;
 
 const AddDeleteButton = (props) => {
-    const { sign } = props;
+    const { sign, caption } = props;
 
     return (
         <StyledButton>
-            {sign}
+            {caption || sign}
         </StyledButton>
     );
 };

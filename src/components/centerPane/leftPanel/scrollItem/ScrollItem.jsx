@@ -39,6 +39,10 @@ const Container = styled.div`
         margin-right: 5px;
     }
 
+    .add-delete-buttons button {
+            width: 35px;
+        }
+
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
         width: 12vw;
         padding: 2vw 0;

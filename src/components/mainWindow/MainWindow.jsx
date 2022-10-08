@@ -34,7 +34,13 @@ const Overlay = styled.div`
     /* background-color: #c00101; */
     background-color: grey;
     grid-template-rows: 15% 75% 10%;
-    /* gap: 5em; */
+
+
+
+    .footer {
+        border-top: grey solid 2px;
+        border-image: linear-gradient(to right, grey, black, black, black, grey) 1;
+    }
 `;
 
 const MainWindow = () => {
@@ -42,9 +48,8 @@ const MainWindow = () => {
         <Container> 
             <Overlay>
                 <Header />
-                {/* <div>Center Pane</div> */}
                 <CenterPane />
-                <div>Footer</div>
+                <div className='footer'>Footer</div>
             </Overlay>
         </Container>);
 };
