@@ -75,23 +75,15 @@ const Container = styled.div`
 `;
 
 const ScrollItem = (props) => {
-    const { title, price, img, menuType, description } = props;
-    const { selectMenuItem } = scrollItemViewModel(props);
-    
     const ctx = useContext(PageContext);
+    const { title, price, img } = props;
+    const { selectMenuItem } = scrollItemViewModel(props, ctx);
+    
     console.log('scroll');
-
-    const data = { title, price, img, menuType, description }
-
-    const a = () => {
-        ctx.setState(data);
-        console.log('scroll a a a a a', ctx);
-    };
 
     return (
         <Container>
-            {/* <img src={img} onClick={selectMenuItem}></img> */}
-            <img src={img} onClick={a}></img>
+            <img src={img} onClick={selectMenuItem}></img>
             <p>{title}</p>
             <div className='priceline'>
                 <p>${price}</p>

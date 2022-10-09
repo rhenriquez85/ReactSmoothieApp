@@ -34,7 +34,7 @@ const Overlay = styled.div`
     grid-template-rows: 15% 75% 10%;
 
 
-    
+
     .footer {
         border-top: grey solid 2px;
         border-image: linear-gradient(to right, grey, black, black, black, grey) 1;
@@ -51,10 +51,5 @@ const MainWindow = () => {
             </Overlay>
         </Container>);
 };
-
-
-
-
-
 
 export { MainWindow };
