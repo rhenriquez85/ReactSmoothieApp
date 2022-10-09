@@ -31,28 +31,14 @@ const Title = styled.div`
 
 const RightPanel = (props) => {
     const cartCtx = useContext(CartContext);
+    const { items } = rightPanelViewModel(props, { cartCtx });
 
-    console.log(cartCtx);
-
-    const data = [
-        { name: 'Rainbow Road', price: 10, amount: 2 },
-        { name: 'Quesadilla Quartet adfasd fasdfsdf', price: 12, amount: 1 },
-    ];
-
-    // const OrderItems = data.map((item) =>
-    //     <li key={item.name}>
-    //         <OrderItem data={item} />
-    //     </li>
-    // );
-
-    const { items } = rightPanelViewModel(props, cartCtx);
-    console.log('rightpanel', items);
+    console.log('rpanel');
 
     return (
         <Container>
             <Title>Order List</Title>
-            {/* <OrderList /> */}
-            <OrderList items={data} />
+            <OrderList items={items} />
         </Container>      
     );
 };

@@ -34,12 +34,12 @@ const Container = styled.div`
 `;
 
 const OrderItem = (props) => {
-    const { name, price, amount } = props.data;
+    const { title, price, amount } = props.data;
     const priceline = `$${price} x ${amount} = $${price * amount}`;
 
     return (
         <Container>
-            <div className='name'>{name}</div>
+            <div className='name'>{title}</div>
             <div className='priceline'>{priceline}</div>
             <div className='remove'>
                 <AddDeleteButton sign='-' caption='Remove' />
