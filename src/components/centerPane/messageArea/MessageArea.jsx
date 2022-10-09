@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { AddDeleteButton } from '../../common/AddDeleteButton';
+import { messageAreaViewModel } from './MessageAreaViewModel';
 import { PageContext } from '../../../store/page-context';
-import { useContext, useState, useEffect } from 'react';
+import { CartContext } from '../../../store/cart-context';
+
 
 const Container = styled.div`
     display: grid;
@@ -41,19 +44,22 @@ const Container = styled.div`
     }
 `;
 
-const MessageArea = () => {
-    const ctx = useContext(PageContext);
-    const { title, price, img, description } = ctx.state;
+const MessageArea = (props) => {
+    const pageCtx = useContext(PageContext);
+    const cartCtx = useContext(CartContext);
+    const { title, price, img, description } = pageCtx.state;
+    const { addToOrder } = messageAreaViewModel(props, { pageCtx, cartCtx });
+
     const priceline = <div><span>{title}</span> ${price}</div>;
 
-    console.log('msgarea', ctx);
+    console.log('msgarea');
 
     return (
         <Container>
             <img src={img} />
             <div className='priceline'>
                 {priceline}
-                <AddDeleteButton sign='+' caption='Add To Order' />
+                <AddDeleteButton sign='+' caption='Add To Order' clickHandler={addToOrder} />
             </div>
             <div>{description}</div>
         </Container>

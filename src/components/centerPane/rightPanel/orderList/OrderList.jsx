@@ -14,8 +14,8 @@ const StyledList = styled.ul`
 `;
 
 const OrderList = (props) => {
-    const data = props.items;
-    const OrderItems = data.map((item) =>
+    const { items } = props;
+    const OrderItems = items.map((item) =>
         <li key={item.title}>
             <OrderItem data={item} />
         </li>

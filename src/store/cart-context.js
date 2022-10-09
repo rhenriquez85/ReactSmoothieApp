@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 const defaultContext = {
     cart: {},
-    setCart: () => {},
+    addToCart: () => {},
+    removeFromCart: () => {},
+    totalCart: () => {},
 };
 
 const CartContext = React.createContext(defaultContext);
@@ -39,8 +41,12 @@ const CartContextProvider = (props) => {
         _editCart(data);
     };
 
+    const totalCart = () => {
+        return Object.values(cart).reduce((prev, item) => prev + item.price * item.amount , 0);
+    };
+
     return (
-        <CartContext.Provider value={ { cart, addToCart, removeFromCart } }>
+        <CartContext.Provider value={ { cart, addToCart, removeFromCart, totalCart } }>
             {props.children}
         </CartContext.Provider>
     )
