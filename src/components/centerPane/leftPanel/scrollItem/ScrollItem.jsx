@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import { AddDeleteButton } from '../../../common/AddDeleteButton';
+import { scrollItemViewModel } from './ScrollItemViewModel';
+import { PageContext } from '../../../../store/page-context';
+import { useContext } from 'react';
 
 const Container = styled.div`
     display: grid;
     justify-content: center;
-    /* padding: 10px 0px; */
     padding: 6px 4px 0px;
     margin-bottom: 10px;
 
     img {
-        /* width: 120px; */
         width: 130px;
         height: 100px;
         object-fit: cover;
         border-radius: 5px;
         border: lightblue solid 1px;
-        /* margin: auto; */
         margin: 0 auto;
     }
 
@@ -25,8 +25,6 @@ const Container = styled.div`
         font-weight: 200;
         margin: 0px;
         padding: 0px;
-        /* margin: 0px 5px; */
-        /* padding: 0px 10px; */
     }
 
     .priceline {
@@ -77,11 +75,30 @@ const Container = styled.div`
 `;
 
 const ScrollItem = (props) => {
-    const { title, price, img } = props;
+    const { title, price, img, menuType, description } = props;
+    const { selectMenuItem } = scrollItemViewModel(props);
+    
+    const ctx = useContext(PageContext);
+    console.log('scroll', ctx);
+
+    const data = { title, price, img, menuType, description }
+
+    const a = () => {
+        console.log('inininin');
+
+        const { handlers } = ctx;
+        handlers.setTitle(title);
+        handlers.setPrice(price);
+        handlers.setImg(img);
+        handlers.setDescription(description);
+
+        console.log('scroll a a a a a', ctx);
+    };
 
     return (
         <Container>
-            <img src={img}></img>
+            {/* <img src={img} onClick={selectMenuItem}></img> */}
+            <img src={img} onClick={a}></img>
             <p>{title}</p>
             <div className='priceline'>
                 <p>${price}</p>

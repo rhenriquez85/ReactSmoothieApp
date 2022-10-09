@@ -17,8 +17,6 @@ const OrderList = () => {
     const data = [
         { name: 'Rainbow Road', price: 10, amount: 2 },
         { name: 'Quesadilla Quartet adfasd fasdfsdf', price: 12, amount: 1 },
-        { name: 'Rainbow Road', price: 10, amount: 2 },
-        { name: 'Quesadilla Quartet adfasd fasdfsdf', price: 12, amount: 1 },
     ];
 
     const OrderItems = data.map((item) =>

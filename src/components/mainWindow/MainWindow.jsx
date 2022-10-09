@@ -30,13 +30,11 @@ const Overlay = styled.div`
     border-radius: inherit;
     width: 98%;
     height: 98%;
-    /* background-color: lightgrey; */
-    /* background-color: #c00101; */
     background-color: grey;
     grid-template-rows: 15% 75% 10%;
 
 
-
+    
     .footer {
         border-top: grey solid 2px;
         border-image: linear-gradient(to right, grey, black, black, black, grey) 1;

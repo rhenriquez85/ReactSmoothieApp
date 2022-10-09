@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { AddDeleteButton } from '../../common/AddDeleteButton';
-
-import image from '../../../images/smoothies/rainbow.jpg';
+import { PageContext } from '../../../store/page-context';
+import { useContext, useState, useEffect } from 'react';
 
 const Container = styled.div`
     display: grid;
@@ -37,14 +37,29 @@ const Container = styled.div`
 `;
 
 const MessageArea = () => {
-    const title = 'Rainbow Road';
-    const price = 10;
+    const ctx = useContext(PageContext);
+    console.log('messagearea', ctx);
+
+    const [title, setTitle] = useState(ctx.data.title);
+    const [price, setPrice] = useState(ctx.data.price);
+    const [img, setImg] = useState(ctx.data.img);
+    const [description, setDescription] = useState(ctx.data.description);
     const priceline = `${title} $${price}`;
-    const description = 'A delicious treat made with strawberry, mango, banana, kiwi and dragon fruit. Enjoy all the flavors of the rainbow!';
+
+    useEffect(() => {
+        console.log('use use use');
+
+        ctx.handlers = {
+            setTitle,
+            setPrice,
+            setImg,
+            setDescription,
+        };
+    });
 
     return (
         <Container>
-            <img src={image} />
+            <img src={img} />
             <div className='priceline'>
                 {priceline}
                 <AddDeleteButton sign='+' caption='Add To Order' />

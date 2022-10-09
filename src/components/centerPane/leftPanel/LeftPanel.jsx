@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ScrollList } from './scrollList/ScrollList';
+import { leftPanelViewModel } from './LeftPanelViewModel';
 
 const Container = styled.div`
     display: grid;
@@ -26,11 +27,13 @@ const Title = styled.div`
     }
 `;
 
-const LeftPanel = () => {
+const LeftPanel = (props) => {
+    const { data } = leftPanelViewModel(props);
+
     return (
         <Container>
             <Title>Smoothies</Title>
-            <ScrollList />
+            <ScrollList data={data} />
         </Container>
     );
 };
