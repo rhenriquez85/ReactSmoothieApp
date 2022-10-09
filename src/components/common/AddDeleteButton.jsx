@@ -7,10 +7,10 @@ const StyledButton = styled.button`
 `;
 
 const AddDeleteButton = (props) => {
-    const { sign, caption } = props;
+    const { sign, caption, clickHandler } = props;
 
     return (
-        <StyledButton>
+        <StyledButton onClick={clickHandler}>
             {caption || sign}
         </StyledButton>
     );

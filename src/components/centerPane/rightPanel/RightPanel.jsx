@@ -1,5 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { OrderList } from './orderList/OrderList';
+import { rightPanelViewModel } from './RightPanelViewModel';
+import { CartContext } from '../../../store/cart-context';
 
 const Container = styled.div`
     display: grid;
@@ -26,12 +29,30 @@ const Title = styled.div`
     }
 `;
 
-const RightPanel = () => {
+const RightPanel = (props) => {
+    const cartCtx = useContext(CartContext);
+
+    console.log(cartCtx);
+
+    const data = [
+        { name: 'Rainbow Road', price: 10, amount: 2 },
+        { name: 'Quesadilla Quartet adfasd fasdfsdf', price: 12, amount: 1 },
+    ];
+
+    // const OrderItems = data.map((item) =>
+    //     <li key={item.name}>
+    //         <OrderItem data={item} />
+    //     </li>
+    // );
+
+    const { items } = rightPanelViewModel(props, cartCtx);
+    console.log('rightpanel', items);
 
     return (
         <Container>
             <Title>Order List</Title>
-            <OrderList />
+            {/* <OrderList /> */}
+            <OrderList items={data} />
         </Container>      
     );
 };

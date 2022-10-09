@@ -1,8 +1,9 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { AddDeleteButton } from '../../../common/AddDeleteButton';
 import { scrollItemViewModel } from './ScrollItemViewModel';
 import { PageContext } from '../../../../store/page-context';
-import { useContext } from 'react';
+import { CartContext } from '../../../../store/cart-context';
 
 const Container = styled.div`
     display: grid;
@@ -75,9 +76,10 @@ const Container = styled.div`
 `;
 
 const ScrollItem = (props) => {
-    const ctx = useContext(PageContext);
+    const pageCtx = useContext(PageContext);
+    const cartCtx = useContext(CartContext);
     const { title, price, img } = props;
-    const { selectMenuItem } = scrollItemViewModel(props, ctx);
+    const { selectMenuItem, addToCart, removeFromCart } = scrollItemViewModel(props, { pageCtx, cartCtx });
     
     console.log('scroll');
 
@@ -88,8 +90,8 @@ const ScrollItem = (props) => {
             <div className='priceline'>
                 <p>${price}</p>
                 <div className='add-delete-buttons'>
-                    <AddDeleteButton sign="+" />
-                    <AddDeleteButton sign="-" />
+                    <AddDeleteButton sign="+" clickHandler={addToCart} />
+                    <AddDeleteButton sign="-" clickHandler={removeFromCart} />
                 </div>
             </div>
         </Container>
