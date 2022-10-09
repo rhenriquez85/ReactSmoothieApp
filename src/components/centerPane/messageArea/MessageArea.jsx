@@ -22,6 +22,11 @@ const Container = styled.div`
         justify-content: space-between;
     }
 
+    .priceline span {
+        color: darkred;
+        font-weight: bold;
+    }
+
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
         grid-template-rows: 65% 10% 25%;
         font-size: 3vw;
@@ -38,24 +43,10 @@ const Container = styled.div`
 
 const MessageArea = () => {
     const ctx = useContext(PageContext);
-    console.log('messagearea', ctx);
+    const { title, price, img, description } = ctx.state;
+    const priceline = <div><span>{title}</span> ${price}</div>;
 
-    const [title, setTitle] = useState(ctx.data.title);
-    const [price, setPrice] = useState(ctx.data.price);
-    const [img, setImg] = useState(ctx.data.img);
-    const [description, setDescription] = useState(ctx.data.description);
-    const priceline = `${title} $${price}`;
-
-    useEffect(() => {
-        console.log('use use use');
-
-        ctx.handlers = {
-            setTitle,
-            setPrice,
-            setImg,
-            setDescription,
-        };
-    });
+    console.log('msgarea', ctx);
 
     return (
         <Container>

@@ -79,19 +79,12 @@ const ScrollItem = (props) => {
     const { selectMenuItem } = scrollItemViewModel(props);
     
     const ctx = useContext(PageContext);
-    console.log('scroll', ctx);
+    console.log('scroll');
 
     const data = { title, price, img, menuType, description }
 
     const a = () => {
-        console.log('inininin');
-
-        const { handlers } = ctx;
-        handlers.setTitle(title);
-        handlers.setPrice(price);
-        handlers.setImg(img);
-        handlers.setDescription(description);
-
+        ctx.setState(data);
         console.log('scroll a a a a a', ctx);
     };
 

@@ -1,10 +1,23 @@
 import React from 'react';
+import { useState } from 'react';
 import dataController from '../controllers/dataController';
 
 const defaultContext = { 
-    data: { ...dataController.getData()[0] },
+    state: {},
+    setState: () => {},
  };
 
-const PageContext = React.createContext();
+const PageContext = React.createContext(defaultContext);
 
-export { PageContext, defaultContext };
+const PageContextProvider = (props) => {
+    const [state, setState] = useState(dataController.getData()[0]);
+    console.log('page-context');
+
+    return (
+        <PageContext.Provider value={{ state, setState }}>
+            {props.children}
+        </PageContext.Provider>
+    );
+};
+
+export { PageContextProvider, PageContext };
