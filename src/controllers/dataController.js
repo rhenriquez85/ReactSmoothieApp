@@ -26,7 +26,7 @@ const dataController = function() {
             { title: 'The Ninth Ring', price: 12, img: ninthring, menuType: 'smoothies', description: 'Make sure to bring your appetite to make it to the bottom of this peanut butter, chocolatey delight. Eight rings and counting.' },
             
             { title: 'Korean Spicy Octopus', price: 29, img: octopus, menuType: 'bites', description: 'Our produce is freshly delivered from local markets and prepared to order. Limited availability while supplies last. Don’t miss your shot at this winning combination. Are you game?' },
-            { title: 'Mt. Tartarus', price: 14, img: tartarus, menuType: 'bites', description: 'The deeper you go, the higher we rise. Bottomless tater-tots dish. First to the top is on us!' },
+            { title: 'Mt. Tartarus', price: 14, img: tartarus, menuType: 'bites', description: 'The deeper you go, the higher we climb. Bottomless tater tots dish. First to the top is on us!' },
             { title: 'Admiral of the Seas', price: 38, img: seas, menuType: 'bites', description: 'This may be your first voyage, but it won’t be your last! Assemble a crew daring enough to brave this seaside platter. All hands on deck!' },
         ];
     }
