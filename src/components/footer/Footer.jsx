@@ -26,6 +26,7 @@ const Container = styled.div`
             font-style: italic;
             font-weight: 100;
             margin: auto 0;
+
         }
     }
 `;

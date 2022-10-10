@@ -3,6 +3,13 @@ import { MenuItem } from './menuItem/MenuItem';
 
 const Container = styled.div`
     display: grid;
+
+    .title {
+        margin: auto;
+        color: green;
+        font-style: italic;
+        font-weight: bold;
+    }
 `;
 
 const Menu = styled.div`
@@ -18,7 +25,7 @@ const Menu = styled.div`
 const MenuPanel = () => {
     return (
         <Container>
-            <div>asdf</div>
+            <div className='title'>Welcome!</div>
             <Menu>
                 <MenuItem itemName={'Smoothies'} itemSrc={''} />
                 <MenuItem itemName={'Bites'} itemSrc={''} />
