@@ -16,7 +16,6 @@ const Container = styled.div`
     img {
         width: 350px;
         height: 250px;
-        /* object-fit: cover; */
         object-fit: contain;
     }
     
@@ -31,14 +30,14 @@ const Container = styled.div`
     }
 
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
-        grid-template-rows: 65% 10% 25%;
+        grid-template-rows: 62.5% 10% 22.5%;
         font-size: 3vw;
         margin: 3vw;
         font-weight: bold;
 
         img {
             width: 45vw;
-            height: 55vw;
+            height: 52.5vw;
             margin: 0 auto;
         }
     }
