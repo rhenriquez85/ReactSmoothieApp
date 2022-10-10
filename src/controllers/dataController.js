@@ -2,7 +2,7 @@ import rainbow from '../images/smoothies/rainbow-road.jpg'
 import majesty from '../images/smoothies/majesty.jpg'
 import amazon from '../images/smoothies/amazon.jpg'
 import berryblast from '../images/smoothies/berry-blast.jpg'
-import admiral from '../images/smoothies/admiral.jpg'
+import admiral from '../images/smoothies/admiral.jpeg'
 import ninthring from '../images/smoothies/ninth-ring.webp'
 
 import bites from '../images/bites/quesadilla.jpg';

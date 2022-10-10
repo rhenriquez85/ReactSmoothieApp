@@ -16,7 +16,7 @@ const Container = styled.div`
             display: flex;
             font-size: 3.2vw;
             font-style: italic;
-            font-weight: 200;
+            font-weight: 100;
         }
     }
 `;
