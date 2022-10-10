@@ -46,8 +46,8 @@ const Container = styled.div`
 const MessageArea = (props) => {
     const pageCtx = useContext(PageContext);
     const cartCtx = useContext(CartContext);
-    const { title, price, img, description } = pageCtx.state;
-    const { addToOrder } = messageAreaViewModel(props, { pageCtx, cartCtx });
+    const { addToOrder, data } = messageAreaViewModel(props, { pageCtx, cartCtx });
+    const { title, price, img, description } = data;
 
     const priceline = <div><span>{title}</span> ${price}</div>;
 

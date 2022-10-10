@@ -8,7 +8,7 @@ const messageAreaViewModel = (props, ctx) => {
         cartCtx.addToCart(data);
     };
 
-    return { addToOrder };
+    return { addToOrder, data };
 };
 
 export { messageAreaViewModel };
