@@ -25,6 +25,7 @@ const Container = styled.div`
     .name a:hover {
         color: darkorange;
         cursor: pointer;
+        font-weight: 600;
     }
 
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
