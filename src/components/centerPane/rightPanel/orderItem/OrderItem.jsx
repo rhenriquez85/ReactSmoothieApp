@@ -1,6 +1,9 @@
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AddDeleteButton } from '../../../common/AddDeleteButton';
 import { CounterButton } from '../../../common/CounterButton';
+import { orderItemViewModel } from './OrderItemViewModel';
+import { CartContext } from '../../../../store/cart-context';
 
 const Container = styled.div`
     display: grid;
@@ -34,7 +37,11 @@ const Container = styled.div`
 `;
 
 const OrderItem = (props) => {
+    const [removeAmount, setRemoveAmount] = useState(1);
     const { title, price, amount } = props.data;
+    const cartCtx = useContext(CartContext);
+    const { removeFromCart } = orderItemViewModel(props, { cartCtx }, { removeAmount });
+    
     const priceline = `$${price} x ${amount} = $${price * amount}`;
 
     return (
@@ -42,8 +49,8 @@ const OrderItem = (props) => {
             <div className='name'>{title}</div>
             <div className='priceline'>{priceline}</div>
             <div className='remove'>
-                <AddDeleteButton sign='-' caption='Remove' />
-                <CounterButton />
+                <AddDeleteButton sign='-' caption='Remove' clickHandler={removeFromCart} />
+                <CounterButton clickHandler={setRemoveAmount} />
             </div>
         </Container>
     );

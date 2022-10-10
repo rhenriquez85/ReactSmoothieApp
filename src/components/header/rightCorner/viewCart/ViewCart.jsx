@@ -43,7 +43,7 @@ const Cart = styled.img`
 const ViewCart = () => {
     return (
         <Container>
-            <Title>View Cart</Title>
+            <Title>Checkout</Title>
             <Cart src={cart} alt=""/>
         </Container>
     );

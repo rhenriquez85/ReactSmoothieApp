@@ -20,8 +20,10 @@ const CartContextProvider = (props) => {
         const curItem = cart[title];
 
         if (curItem) {
-            if (curItem.amount + amount > 9 || curItem.amount + amount < 0) return;
-            curItem.amount += amount;
+            if (curItem.amount + amount > 9) return;
+            if (curItem.amount + amount < 0) curItem.amount = 0;
+            else curItem.amount += amount;
+            
             newCart[title] = curItem;
         }
         else {
