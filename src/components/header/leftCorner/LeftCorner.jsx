@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import { leftCornerViewModel } from './LeftCornerViewModel';
 import { MenuContext } from '../../../store/menu-context';
+import { PageContext } from '../../../store/page-context';
 
 const Container = styled.div`
     display: flex;
@@ -12,8 +13,6 @@ const StyledLogo = styled.img`
     position: relative;
     width: 40px;
     height: 40px;
-    /* outline: #403f3f solid 1px; */
-    /* outline: #c00101 solid 1px; */
     border-radius: 50%;
     border: #e37d00 solid 7px;
     margin: auto 8px;
@@ -50,7 +49,8 @@ const StyledTitle = styled.div`
 
 const LeftCorner = (props) => {
     const menuCtx = useContext(MenuContext);
-    const { logo, clickHandler } = leftCornerViewModel(props, { menuCtx });
+    const pageCtx = useContext(PageContext);
+    const { logo, clickHandler } = leftCornerViewModel(props, { menuCtx, pageCtx });
 
     return (
         <Container>
