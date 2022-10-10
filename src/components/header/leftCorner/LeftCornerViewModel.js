@@ -3,12 +3,12 @@ import logo from '../../../images/logo.jpeg';
 const leftCornerViewModel = (props, ctx) => {
     const { menuCtx, pageCtx } = ctx;
 
-    const clickHandler = () => {
-        menuCtx.setCurrentMenu('');
+    const updateMenu = () => {
+        menuCtx.setCurrentMenu('Favorites');
         pageCtx.setState(pageCtx.getFirstItem(''));
     };
 
-    return { logo, clickHandler };
+    return { logo, updateMenu };
 };
 
 export { leftCornerViewModel };

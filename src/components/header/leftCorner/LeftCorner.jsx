@@ -1,12 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { leftCornerViewModel } from './LeftCornerViewModel';
 import { MenuContext } from '../../../store/menu-context';
 import { PageContext } from '../../../store/page-context';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
     align-items: center;
+    
+    a {
+        margin: auto;
+    }
 `;
 
 const StyledLogo = styled.img`
@@ -50,11 +55,17 @@ const StyledTitle = styled.div`
 const LeftCorner = (props) => {
     const menuCtx = useContext(MenuContext);
     const pageCtx = useContext(PageContext);
-    const { logo, clickHandler } = leftCornerViewModel(props, { menuCtx, pageCtx });
+    const { logo, updateMenu } = leftCornerViewModel(props, { menuCtx, pageCtx });
+
+    useEffect(() => {
+        updateMenu();
+    }, []);
 
     return (
         <Container>
-            <StyledLogo src={logo} onClick={clickHandler} />
+            <Link to={'favorites'}>
+                <StyledLogo src={logo} onClick={updateMenu} />
+            </Link>
             <StyledTitle>Admiral Castellanos's Galactic Smoothie Shop</StyledTitle>
         </Container>
     );
