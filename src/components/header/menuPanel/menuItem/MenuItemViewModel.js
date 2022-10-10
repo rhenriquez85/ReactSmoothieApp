@@ -1,10 +1,13 @@
 //
 const menuItemViewModel = (props, ctx) => {
     const { itemName } = props;
-    const { menuCtx } = ctx;
+    const { menuCtx, pageCtx } = ctx;
 
     const updateMenu = () => {
-        menuCtx.isMenuType(itemName) && menuCtx.setCurrentMenu(itemName);
+        if (menuCtx.isMenuType(itemName)) {
+            menuCtx.setCurrentMenu(itemName);
+            pageCtx.setState(pageCtx.getFirstItem(itemName));
+        }
     };
 
     return { updateMenu };
