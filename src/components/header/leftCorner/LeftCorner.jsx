@@ -12,7 +12,8 @@ const StyledLogo = styled.img`
     position: relative;
     width: 40px;
     height: 40px;
-    outline: #403f3f solid 1px;
+    /* outline: #403f3f solid 1px; */
+    /* outline: #c00101 solid 1px; */
     border-radius: 50%;
     border: #e37d00 solid 7px;
     margin: auto 8px;
