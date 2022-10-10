@@ -6,6 +6,7 @@ const defaultContext = {
     setCurrentMenu: () => {},
     getCurrentMenu: () => {},
     isMenuType: () => {},
+    getMenuType: () => {},
 }
 
 const MenuContext = React.createContext(defaultContext);
@@ -40,8 +41,12 @@ const MenuContextProvider = (props) => {
         return _isMenuType(menuType);
     };
 
+    const getMenuType = () => {
+        return menu || 'Favorites';
+    }
+
     return (
-        <MenuContext.Provider value={{ menu, setCurrentMenu, getCurrentMenu, isMenuType }}>
+        <MenuContext.Provider value={{ menu, setCurrentMenu, getCurrentMenu, isMenuType, getMenuType }}>
             {props.children}
         </MenuContext.Provider>
     );

@@ -31,11 +31,11 @@ const Title = styled.div`
 
 const LeftPanel = (props) => {
     const menuCtx = useContext(MenuContext);
-    const { data } = leftPanelViewModel(props, { menuCtx });
+    const { data, menuTitle } = leftPanelViewModel(props, { menuCtx });
 
     return (
         <Container>
-            <Title>Smoothies</Title>
+            <Title>{menuTitle}</Title>
             <ScrollList data={data} />
         </Container>
     );

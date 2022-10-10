@@ -1,6 +1,7 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
-import logo from '../../../images/logo.jpeg';
-// import logo from '../../../images/new.svg';
+import { leftCornerViewModel } from './LeftCornerViewModel';
+import { MenuContext } from '../../../store/menu-context';
 
 const Container = styled.div`
     display: flex;
@@ -11,25 +12,15 @@ const StyledLogo = styled.img`
     position: relative;
     width: 40px;
     height: 40px;
-    /* width: 35px;
-    height: 35px; */
     outline: #403f3f solid 1px;
     border-radius: 50%;
-    /* border: gray solid 5px; */
     border: #e37d00 solid 7px;
-    /* border: #403f3f solid 5px; */
-    /* border: darkblue solid 5px; */
     margin: auto 8px;
-    /* background-image: linear-gradient(to bottom right, white, white, white, lightblue, lightblue); */
-
     transition: .6s ease; 
 
     :hover {
         cursor: pointer;
-        /* border-color: gold; */
         border-color: #c00101;
-        /* border-color: darkblue; */
-
         -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
         transform: scale(1.05);
@@ -39,7 +30,6 @@ const StyledLogo = styled.img`
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
         outline: none;
         margin: auto;
-        /* border: #e37d00 solid 8px; */
     }
 `;
 
@@ -57,11 +47,13 @@ const StyledTitle = styled.div`
     }
 `;
 
+const LeftCorner = (props) => {
+    const menuCtx = useContext(MenuContext);
+    const { logo, clickHandler } = leftCornerViewModel(props, { menuCtx });
 
-const LeftCorner = () => {
     return (
         <Container>
-            <StyledLogo src={logo}/>
+            <StyledLogo src={logo} onClick={clickHandler} />
             <StyledTitle>Admiral Castellanos's Galactic Smoothie Shop</StyledTitle>
         </Container>
     );
