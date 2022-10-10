@@ -1,11 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { MenuContext } from '../../../../store/menu-context';
-
-
 import { PageContext } from '../../../../store/page-context';
-
-
 import { menuItemViewModel } from './MenuItemViewModel';
 
 const Item = styled.div`

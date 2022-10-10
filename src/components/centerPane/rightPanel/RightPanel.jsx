@@ -33,7 +33,8 @@ const RightPanel = (props) => {
     const cartCtx = useContext(CartContext);
     const { items } = rightPanelViewModel(props, { cartCtx });
 
-    console.log('rpanel', items);
+    // console.log('rpanel', items);
+    console.log('rpanel');
 
     return (
         <Container>

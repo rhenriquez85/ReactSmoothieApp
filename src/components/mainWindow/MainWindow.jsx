@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Header } from '../header/Header';
 import { CenterPane } from '../centerPane/CenterPane';
+import { Footer } from '../footer/Footer';
 
 const Container = styled.div`
     position: fixed;
@@ -35,10 +36,10 @@ const Overlay = styled.div`
 
 
 
-    .footer {
+    /* .footer {
         border-top: grey solid 2px;
         border-image: linear-gradient(to right, grey, black, black, black, grey) 1;
-    }
+    } */
 `;
 
 const MainWindow = () => {
@@ -47,7 +48,7 @@ const MainWindow = () => {
             <Overlay>
                 <Header />
                 <CenterPane />
-                <div className='footer'>Footer</div>
+                <Footer />
             </Overlay>
         </Container>);
 };

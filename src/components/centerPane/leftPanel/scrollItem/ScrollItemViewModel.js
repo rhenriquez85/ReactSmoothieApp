@@ -4,8 +4,6 @@ const scrollItemViewModel = (props, ctx) => {
     const { pageCtx, cartCtx } = ctx;
     const data = { title, price, img, menuType, description }
 
-    console.log('asdfasdf',  data);
-
     const selectMenuItem = () => {
         pageCtx.setState(data);
         console.log('setMenuItem');
