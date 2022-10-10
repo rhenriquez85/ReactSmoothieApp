@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { ScrollList } from './scrollList/ScrollList';
 import { leftPanelViewModel } from './LeftPanelViewModel';
+import { MenuContext } from '../../../store/menu-context';
 
 const Container = styled.div`
     display: grid;
@@ -28,7 +30,8 @@ const Title = styled.div`
 `;
 
 const LeftPanel = (props) => {
-    const { data } = leftPanelViewModel(props);
+    const menuCtx = useContext(MenuContext);
+    const { data } = leftPanelViewModel(props, { menuCtx });
 
     return (
         <Container>

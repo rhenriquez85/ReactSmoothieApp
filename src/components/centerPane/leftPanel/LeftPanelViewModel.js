@@ -1,8 +1,9 @@
-import dataController from '../../../controllers/dataController';
+//
+const leftPanelViewModel = (props, ctx) => {
+    const { menuCtx } = ctx;
+    const data = menuCtx.getCurrentMenu();
 
-const leftPanelViewModel = (props) => {
-    const data = dataController.getData();
-    console.log('leftPane', data);
+    console.log('leftPane');
 
     return { data };
 };

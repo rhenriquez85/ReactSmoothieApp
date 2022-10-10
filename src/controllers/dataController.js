@@ -12,22 +12,42 @@ const dataController = function() {
 
     this._updateData = () => {
         this._data = [
-            { title: 'Rainbow Road', price: 10, img: rainbow, menuType: 'smoothie', description: 'A delicious treat made with strawberry, mango, banana, kiwi and dragon fruit. Enjoy all the flavors of the rainbow!' },
-            { title: 'Her Majesty\'s Royal Service', price: 12, img: majesty, menuType: 'smoothie', description: 'A sweet tropical blend fit for royalty—pineapple, passion fruit, strawberry and kiwi.' },
-            { title: 'Amazon Rain Forest', price: 9, img: amazon, menuType: 'smoothie', description: 'Refresh yourself with a drink as exotic as the Amazon. Avocado, apple and spinach.' },
-            { title: 'The Admiral', price: 11, img: admiral, menuType: 'smoothie', description: 'Your favorite blend of papaya, lemon juice and coconut, chilled and made to order. Attention!' },
-            { title: 'Berry Bonanza', price: 13, img: berryblast, menuType: 'smoothie', description: 'A treasure trove of flavor. Set sail to an island filled with mixed berry, oatmeal and yogurt.' },
-            { title: 'The Ninth Ring', price: 12, img: ninthring, menuType: 'smoothie', description: 'You must bring your appetite to make it to the bottom of this peanut butter/chocolatey delight. Eight ring’s and counting.' },
-            { title: 'Quesadilla Quartet', price: 12, img: bites, menuType: 'bite', description: '' },
+            { title: 'Rainbow Road', price: 10, img: rainbow, menuType: 'smoothies', description: 'A delicious treat made with strawberry, mango, banana, kiwi and dragon fruit. Enjoy all the flavors of the rainbow!' },
+            { title: 'Her Majesty\'s Royal Service', price: 12, img: majesty, menuType: 'smoothies', description: 'A sweet tropical blend fit for royalty—pineapple, passion fruit, strawberry and kiwi.' },
+            { title: 'Amazon Rain Forest', price: 9, img: amazon, menuType: 'smoothies', description: 'Refresh yourself with a drink as exotic as the Amazon. Avocado, apple and spinach.' },
+            { title: 'Quesadilla Quartet', price: 12, img: bites, menuType: 'bites', description: '' },
+            { title: 'The Admiral', price: 11, img: admiral, menuType: 'smoothies', description: 'Your favorite blend of papaya, lemon juice and coconut, chilled and made to order. Attention!' },
+            { title: 'Berry Bonanza', price: 13, img: berryblast, menuType: 'smoothies', description: 'A treasure trove of flavor. Set sail to an island filled with mixed berry, oatmeal and yogurt.' },
+            { title: 'The Ninth Ring', price: 12, img: ninthring, menuType: 'smoothies', description: 'You must bring your appetite to make it to the bottom of this peanut butter/chocolatey delight. Eight ring’s and counting.' },
         ];
     }
 
-    console.log('datadata datadata datadata');
+    this._menuTypes = [
+        'smoothies',
+        'bites',
+    ];
 
-    this.getData = () => {
-        this._updateData();
-        return this._data;
+    this._favorites = [
+        'Rainbow Road',
+        'Quesadilla Quartet',
+        'The Admiral',
+    ];
+
+    this._data.length || this._updateData();
+
+    this.getData = (menuType) => {
+        return !menuType ? this._data : this._data.filter((item) => item.menuType === menuType.toLowerCase());
     };
+
+    this.isMenuType = (menuType) => {
+        return this._menuTypes.includes(menuType.toLowerCase());
+    };
+
+    this.getFavorites = () => {
+        return this._data.filter((item) => this._favorites.includes(item.title));
+    };
+
+    console.log('datadata datadata datadata');
 };
 
 export default new dataController();
