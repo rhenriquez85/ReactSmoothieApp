@@ -6,7 +6,15 @@ const Container = styled.div`
     justify-content: center;
 
     p {
-        display: none;
+        float: right;
+        margin-right: 25.5%;
+        font-weight: 100;
+    }
+
+    p:hover {
+        color: gold;
+        font-weight: 500;
+        cursor: help;
     }
     
     @media (pointer:coarse), (pointer:none), (max-width:800px) {
@@ -17,6 +25,7 @@ const Container = styled.div`
             font-size: 3.2vw;
             font-style: italic;
             font-weight: 100;
+            margin: auto 0;
         }
     }
 `;
