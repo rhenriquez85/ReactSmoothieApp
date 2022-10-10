@@ -33,13 +33,6 @@ const Overlay = styled.div`
     height: 98%;
     background-color: grey;
     grid-template-rows: 15% 75% 10%;
-
-
-
-    /* .footer {
-        border-top: grey solid 2px;
-        border-image: linear-gradient(to right, grey, black, black, black, grey) 1;
-    } */
 `;
 
 const MainWindow = () => {
