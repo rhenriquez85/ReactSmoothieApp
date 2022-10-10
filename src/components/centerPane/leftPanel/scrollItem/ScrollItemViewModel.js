@@ -2,21 +2,23 @@
 const scrollItemViewModel = (props, ctx) => {
     const { title, price, img, menuType, description } = props;
     const { pageCtx, cartCtx } = ctx;
+    const data = { title, price, img, menuType, description }
+
+    console.log('asdfasdf',  data);
 
     const selectMenuItem = () => {
-        const data = { title, price, img, menuType, description }
         pageCtx.setState(data);
         console.log('setMenuItem');
     };
 
     const addToCart = () => {
         console.log('addcart')
-        cartCtx.addToCart({ title, price });
+        cartCtx.addToCart(data);
     }
 
     const removeFromCart = () => {
         console.log('removecart')
-        cartCtx.removeFromCart({ title, price });
+        cartCtx.removeFromCart(data);
     }
 
     return { selectMenuItem, addToCart, removeFromCart };

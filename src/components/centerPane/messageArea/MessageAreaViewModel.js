@@ -1,10 +1,11 @@
 //
 const messageAreaViewModel = (props, ctx) => {
     const { pageCtx, cartCtx } = ctx;
-    const { title, price } = pageCtx.state;
+    const { title, price, img, menuType, description } = pageCtx.state;
+    const data = { title, price, img, menuType, description }
 
     const addToOrder = () => {
-        cartCtx.addToCart({ title, price });
+        cartCtx.addToCart(data);
     };
 
     return { addToOrder };

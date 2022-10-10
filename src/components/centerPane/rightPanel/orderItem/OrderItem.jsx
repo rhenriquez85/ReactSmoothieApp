@@ -4,6 +4,7 @@ import { AddDeleteButton } from '../../../common/AddDeleteButton';
 import { CounterButton } from '../../../common/CounterButton';
 import { orderItemViewModel } from './OrderItemViewModel';
 import { CartContext } from '../../../../store/cart-context';
+import { PageContext } from '../../../../store/page-context';
 
 const Container = styled.div`
     display: grid;
@@ -19,6 +20,11 @@ const Container = styled.div`
 
     .remove input {
         margin-left: 30px;
+    }
+
+    .name a:hover {
+        color: darkorange;
+        cursor: pointer;
     }
 
     @media (pointer:coarse), (pointer:none), (max-width: 800px) {
@@ -40,13 +46,14 @@ const OrderItem = (props) => {
     const [removeAmount, setRemoveAmount] = useState(1);
     const { title, price, amount } = props.data;
     const cartCtx = useContext(CartContext);
-    const { removeFromCart } = orderItemViewModel(props, { cartCtx }, { removeAmount });
-    
+    const pageCtx = useContext(PageContext);
+    const { removeFromCart, linkToPage } = orderItemViewModel(props, { cartCtx, pageCtx }, { removeAmount });
+
     const priceline = `$${price} x ${amount} = $${price * amount}`;
 
     return (
         <Container>
-            <div className='name'>{title}</div>
+            <div className='name'><a onClick={linkToPage}>{title}</a></div>
             <div className='priceline'>{priceline}</div>
             <div className='remove'>
                 <AddDeleteButton sign='-' caption='Remove' clickHandler={removeFromCart} />

@@ -15,7 +15,7 @@ const CartContextProvider = (props) => {
 
     const _editCart = (data) => {
         console.log('context edit');
-        const { title, price, amount } = data;
+        const { title, amount } = data;
         const newCart = { ...cart };
         const curItem = cart[title];
 
@@ -27,7 +27,7 @@ const CartContextProvider = (props) => {
             newCart[title] = curItem;
         }
         else {
-            newCart[title] = { title, price, amount };
+            newCart[title] = data;
         }
 
         setCart(newCart);
