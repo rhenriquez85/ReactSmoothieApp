@@ -1,12 +1,17 @@
 //
-const rightCornerViewModel = (props, ctx) => {
+const rightCornerViewModel = (props, ctx, params) => {
     const { cartCtx } = ctx;
+    const { navigate } = params;
 
     const totalCart = () => {
         return cartCtx.totalCart();
     };
 
-    return { totalCart };
+    const goToCheckout = () => {
+        navigate('/checkout');
+    }
+
+    return { totalCart, goToCheckout };
 };
 
 export { rightCornerViewModel };

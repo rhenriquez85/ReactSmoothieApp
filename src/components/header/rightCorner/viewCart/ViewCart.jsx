@@ -28,11 +28,11 @@ const Cart = styled.img`
     width: 30px;
     height: 30px;
 
-    img{
+    img {
         transition: 1s ease;   
     }
 
-    :hover{
+    :hover {
         -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
         transform: scale(1.2);

@@ -4,6 +4,7 @@ import { TotalCart } from './totalCart/TotalCart';
 import { ViewCart } from './viewCart/ViewCart';
 import { rightCornerViewModel } from './RightCornerViewModel';
 import { CartContext } from '../../../store/cart-context';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     display: grid;
@@ -16,10 +17,11 @@ const Container = styled.div`
 
 const RightCorner = (props) => {
     const cartCtx = useContext(CartContext);
-    const { totalCart } = rightCornerViewModel(props, { cartCtx });
+    const navigate = useNavigate();
+    const { totalCart, goToCheckout } = rightCornerViewModel(props, { cartCtx }, { navigate });
 
     return (
-        <Container>
+        <Container onClick={goToCheckout} >
             <ViewCart />
             <TotalCart amount={totalCart()} />
         </Container>
