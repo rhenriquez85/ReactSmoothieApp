@@ -1,0 +1,1 @@
+docker run -p 80:80 --rm --name tmp --network net rhenriquez85/reactsmoothieapp
