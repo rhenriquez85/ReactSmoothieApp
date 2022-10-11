@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { AddDeleteButton } from '../../../common/AddDeleteButton';
 import { scrollItemViewModel } from './ScrollItemViewModel';
-import { PageContext } from '../../../../store/page-context';
-import { CartContext } from '../../../../store/cart-context';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
     display: grid;
@@ -76,16 +76,20 @@ const Container = styled.div`
 `;
 
 const ScrollItem = (props) => {
-    const pageCtx = useContext(PageContext);
-    const cartCtx = useContext(CartContext);
-    const { title, price, img } = props;
-    const { selectMenuItem, addToCart, removeFromCart } = scrollItemViewModel(props, { pageCtx, cartCtx });
+    const { title, price, img } = props.data;
+    const location = useLocation();
+    const { selectMenuItem, addToCart, removeFromCart } = scrollItemViewModel(props.data, props.context);
     
     console.log('scroll');
+    useEffect(() => {
+        selectMenuItem(location.pathname.substring(1));
+    }, [location.pathname]);
 
     return (
         <Container>
-            <img src={img} onClick={selectMenuItem}></img>
+            <Link to={title.toLowerCase().replaceAll(' ', '-').replaceAll('.', '').replaceAll('\'', '')}>
+                <img src={img} onClick={selectMenuItem} />
+            </Link>
             <p>{title}</p>
             <div className='priceline'>
                 <p>${price}</p>

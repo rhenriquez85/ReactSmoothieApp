@@ -49,6 +49,14 @@ const dataController = function() {
         return !menuType ? this._data : this._data.filter((item) => item.menuType === menuType.toLowerCase());
     };
 
+    this.getItem = (title) => {
+        return this._data.filter((item) => item.title === title)[0];
+    };
+
+    this.getItemRouteName = (title) => {
+        return this._data.filter((item) => item.title.toLowerCase().replaceAll(' ', '-').replaceAll('.', '').replaceAll('\'', '') === title)[0];
+    }
+
     this.isMenuType = (menuType) => {
         return this._menuTypes.includes(menuType.toLowerCase());
     };

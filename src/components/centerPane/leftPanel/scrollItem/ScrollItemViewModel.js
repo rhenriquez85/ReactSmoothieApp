@@ -1,12 +1,15 @@
-//
+import dataController from "../../../../controllers/dataController";
+
 const scrollItemViewModel = (props, ctx) => {
     const { title, price, img, menuType, description } = props;
     const { pageCtx, cartCtx } = ctx;
     const data = { title, price, img, menuType, description }
 
-    const selectMenuItem = () => {
-        pageCtx.setState(data);
-        console.log('setMenuItem');
+    const selectMenuItem = (menuItem) => {
+        const item = typeof menuItem === 'string' ? dataController.getItemRouteName(menuItem) : undefined;
+        if (item) {
+            pageCtx.setState(item);
+        }
     };
 
     const addToCart = () => {
