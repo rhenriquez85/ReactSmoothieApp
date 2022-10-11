@@ -1,6 +1,7 @@
-import { useState } from 'react'; 
+import { useState, useContext, useEffect } from 'react'; 
 import styled from 'styled-components';
 import { checkoutViewModel } from './CheckoutViewModel';
+import { CartContext } from '../../../store/cart-context';
 
 const Container = styled.div`
     display: grid;
@@ -49,27 +50,41 @@ const Container = styled.div`
             padding: 0;
             margin: 0 0.5vw;
         }   
+
+        .thank-you-image img {
+            width: 100%;
+            height: 20vh;
+            object-fit: contain;
+            margin: 0 auto;
+        }
     }
 `;
 
 const Checkout = (props) => {
     const [checkout, setCheckout] = useState(false);
     const [wait, setWait] = useState(false);
-    const hideImg = checkout ? '' : 'hide';
-    const hideButton = checkout ? 'hide' : '';
+    const cartCtx = useContext(CartContext);
 
-    const { image, displayOrderLine, placeOrder, waitOrder } = checkoutViewModel(
+    const { image, thankyouOrder, displayOrderLine, placeOrder, waitOrder } = checkoutViewModel(
         props, 
-        {}, 
+        { cartCtx }, 
         { checkout, setCheckout, wait, setWait }
     );
+
+    const hideImg = checkout ? '' : 'hide';
+    const hideButton = checkout || !cartCtx.totalCart() ? 'hide' : '';
+
+    useEffect(() => {
+        console.log('checkout use use use use', checkout);
+        checkout && cartCtx.clearCart();
+    }, [checkout]);
 
     return (
         <Container>
             <div className={`thank-you-image ${hideImg}`}>
                 <img src={image} />
             </div>
-            <div className={`order-line `}>{displayOrderLine()}</div>
+            <div className={`order-line`}>{displayOrderLine()}</div>
             <div className={`order-confirm ${hideButton}`}>
                 <button onClick={placeOrder}>Yes</button>
                 <button onClick={waitOrder}>No</button>
@@ -79,5 +94,3 @@ const Checkout = (props) => {
 };
 
 export { Checkout };
-
-

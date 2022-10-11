@@ -5,6 +5,7 @@ const defaultContext = {
     addToCart: () => {},
     removeFromCart: () => {},
     totalCart: () => {},
+    clearCart: () => {},
 };
 
 const CartContext = React.createContext(defaultContext);
@@ -47,8 +48,12 @@ const CartContextProvider = (props) => {
         return Object.values(cart).reduce((prev, item) => prev + item.price * item.amount , 0);
     };
 
+    const clearCart = () => {
+        setCart({});
+    };
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalCart, clearCart }}>
             {props.children}
         </CartContext.Provider>
     )
